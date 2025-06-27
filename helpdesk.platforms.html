@@ -72,7 +72,30 @@
     </style>
 </head>
 <body class="text-gray-800">
-
+    <a href="index.html" class="back-to-menu">⬅</a>
+    
+    <style>
+      .back-to-menu {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: linear-gradient(135deg, #2b5876, #4e4376);
+        color: white;
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: background 0.3s ease, transform 0.2s ease;
+        z-index: 1000;
+      }
+    
+      .back-to-menu:hover {
+        background: linear-gradient(135deg, #4e4376, #2b5876);
+        transform: translateY(-2px);
+      }
+    </style>
     <header class="bg-gradient-to-r from-[#003F5C] to-[#374C80] text-white text-center py-12 px-4">
         <h1 class="text-4xl md:text-5xl font-black text-shadow">Scegliere la Piattaforma di Ticketing Perfetta</h1>
         <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto opacity-90">Un'analisi visuale per identificare la soluzione ideale in base a costi, integrazioni e funzionalità chiave.</p>
