@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografica: Scelta della Piattaforma di Ticketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-card {
+            border-left: 5px solid #FFA600;
+        }
+        .flowchart-step {
+            border: 2px solid #374C80;
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .flowchart-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374C80;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            transform: rotate(90deg);
+        }
+         @media (min-width: 1024px) {
+            .flowchart-arrow {
+                transform: rotate(0deg);
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-gradient-to-r from-[#003F5C] to-[#374C80] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-5xl font-black text-shadow">Scegliere la Piattaforma di Ticketing Perfetta</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto opacity-90">Un'analisi visuale per identificare la soluzione ideale in base a costi, integrazioni e funzionalità chiave.</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+
+        <section id="criteria" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">I Criteri di Valutazione Chiave</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">👤</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Account Cliente Unico</h3>
+                        <p class="text-gray-600 text-sm">Un portale unico per ogni cliente per gestire le proprie segnalazioni.</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">📝</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Form Configurabili</h3>
+                        <p class="text-gray-600 text-sm">Possibilità di personalizzare i campi dei moduli per raccogliere dati specifici.</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">💰</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Prezzo Contenuto</h3>
+                        <p class="text-gray-600 text-sm">Modello di costo sostenibile, idealmente con un costo per utente cliente basso o nullo.</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">🔗</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Integrazione ClickUp</h3>
+                        <p class="text-gray-600 text-sm">Compatibilità nativa o tramite API con il sistema di gestione task esistente.</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">🔑</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Login Diretto (Magic Link)</h3>
+                        <p class="text-gray-600 text-sm">Accesso preferenziale senza password per i clienti, tramite URL.</p>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center kpi-card">
+                    <span class="text-4xl mr-4 text-[#FFA600]">🇮🇹</span>
+                    <div>
+                        <h3 class="font-bold text-lg">Supporto in Italiano</h3>
+                        <p class="text-gray-600 text-sm">Assistenza e documentazione disponibili in lingua italiana.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">Analisi Visiva delle Piattaforme</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-center mb-2">Costo per l'Utente Cliente Finale</h3>
+                    <p class="text-center text-sm text-gray-600 mb-6">Il modello di prezzo più vantaggioso è quello che non scala con il numero di clienti.</p>
+                    <div class="chart-container">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <h3 class="text-xl font-bold text-center mb-2">Facilità di Integrazione con ClickUp</h3>
+                    <p class="text-center text-sm text-gray-600 mb-6">Valutazione della complessità per connettere la piattaforma a ClickUp (Punteggio più alto = migliore).</p>
+                    <div class="chart-container">
+                        <canvas id="integrationChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="card p-6 lg:col-span-2">
+                    <h3 class="text-xl font-bold text-center mb-2">Disponibilità "Magic Link" per i Clienti</h3>
+                    <p class="text-center text-sm text-gray-600 mb-6">Una delle funzionalità più richieste, il login diretto senza password per i clienti, risulta un punto debole comune.</p>
+                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                        <div class="chart-container" style="max-width: 300px; height: 300px;">
+                            <canvas id="magicLinkChart"></canvas>
+                        </div>
+                        <div class="max-w-md text-center md:text-left">
+                            <h4 class="text-2xl font-bold text-[#BC5090]">0% di Soluzioni Analizzate</h4>
+                            <p class="mt-2 text-gray-700">Nessuna delle piattaforme di helpdesk dedicate (Deepser, Rexpondo, Freshdesk, Zoho Desk) offre nativamente una funzione di "magic link" per gli utenti clienti finali. Freshdesk la riserva solo agli agenti interni. Questo rappresenta il principale ostacolo per un accesso semplificato e potrebbe richiedere sviluppi personalizzati.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendation">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#003F5C]">Percorso Decisionale e Raccomandazioni</h2>
+             <div class="card p-8">
+                <p class="text-center text-gray-600 mb-8">La scelta dipende dalla priorità strategica. Segui il flusso per identificare la soluzione più adatta a te.</p>
+                <div class="flex flex-col lg:flex-row items-center justify-center">
+                    <div class="flowchart-step">
+                        <h4 class="font-bold text-lg text-[#003F5C]">Qual è la tua priorità N.1?</h4>
+                    </div>
+                    
+                    <div class="flowchart-arrow">↓</div>
+                    
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex flex-col items-center">
+                             <div class="flowchart-step bg-green-50 border-green-500">
+                                <h4 class="font-bold text-lg text-green-700">Costo per Cliente e Funzionalità Complete</h4>
+                                <p class="text-sm text-gray-600 mt-2">Voglio un portale clienti completo al costo più basso possibile per i miei utenti.</p>
+                            </div>
+                            <div class="text-2xl my-2 text-green-500">↓</div>
+                            <div class="flowchart-step border-green-500">
+                                <h4 class="font-bold text-xl text-green-800">🏆 Zoho Desk</h4>
+                                <p class="text-sm text-gray-600 mt-2">Offre il miglior equilibrio con 1.000 utenti portale gratuiti e un set di funzionalità robusto. L'integrazione con ClickUp è fattibile tramite API/connettori.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center">
+                             <div class="flowchart-step bg-blue-50 border-blue-500">
+                                <h4 class="font-bold text-lg text-blue-700">Massima Semplicità e Integrazione Nativa</h4>
+                                <p class="text-sm text-gray-600 mt-2">L'integrazione perfetta e immediata con ClickUp è l'unica cosa che conta.</p>
+                            </div>
+                             <div class="text-2xl my-2 text-blue-500">↓</div>
+                             <div class="flowchart-step border-blue-500">
+                                <h4 class="font-bold text-xl text-blue-800">🚀 ClickUp Forms</h4>
+                                <p class="text-sm text-gray-600 mt-2">La soluzione più diretta. I ticket diventano task istantaneamente. Si sacrifica però il portale storico per il cliente.</p>
+                            </div>
+                        </div>
+                        
+                         <div class="flex flex-col items-center">
+                             <div class="flowchart-step bg-purple-50 border-purple-500">
+                                <h4 class="font-bold text-lg text-purple-700">Supporto Italiano e Massima Personalizzazione</h4>
+                                <p class="text-sm text-gray-600 mt-2">Preferisco una soluzione italiana con grande flessibilità, anche se richiede più configurazione.</p>
+                            </div>
+                             <div class="text-2xl my-2 text-purple-500">↓</div>
+                             <div class="flowchart-step border-purple-500">
+                                <h4 class="font-bold text-xl text-purple-800">🇮🇹 Deepser / Rexpondo</h4>
+                                <p class="text-sm text-gray-600 mt-2">Soluzioni italiane potenti. Richiedono un contatto diretto per definire i costi per i clienti e valutare la complessità dell'integrazione API.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#003F5C] text-white text-center py-6 mt-16">
+        <p>&copy; 2024 Analisi Piattaforme di Ticketing. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const palette = {
+            blue: '#003F5C',
+            purple: '#7A5195',
+            pink: '#BC5090',
+            red: '#EF5675',
+            orange: '#FF764A',
+            yellow: '#FFA600',
+            lightBlue: '#374C80',
+        };
+
+        new Chart(document.getElementById('priceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Zoho Desk', 'ClickUp Forms', 'Altre Soluzioni (per agente)'],
+                datasets: [{
+                    label: 'Vantaggio Costo per Utente Cliente',
+                    data: [100, 95, 30],
+                    backgroundColor: [palette.yellow, palette.orange, palette.red],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Punteggio di Convenienza'
+                        }
+                    }
+                }
+            }
+        });
+
+        const integrationData = {
+            labels: ['Portale Clienti', 'Form Configurabili', 'Prezzo Vantaggioso', 'Integrazione ClickUp', 'Login Semplice', 'Supporto Italiano'],
+            datasets: [
+                {
+                    label: 'ClickUp Forms',
+                    data: [1, 8, 9, 10, 7, 6],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 118, 74, 0.2)',
+                    borderColor: palette.orange,
+                    pointBackgroundColor: palette.orange,
+                },
+                {
+                    label: 'Zoho Desk',
+                    data: [9, 7, 10, 6, 4, 9],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 166, 0, 0.2)',
+                    borderColor: palette.yellow,
+                    pointBackgroundColor: palette.yellow,
+                },
+                 {
+                    label: 'Deepser / Rexpondo',
+                    data: [8, 9, 5, 5, 4, 10],
+                    fill: true,
+                    backgroundColor: 'rgba(122, 81, 149, 0.2)',
+                    borderColor: palette.purple,
+                    pointBackgroundColor: palette.purple,
+                }
+            ]
+        };
+
+        new Chart(document.getElementById('integrationChart'), {
+            type: 'radar',
+            data: integrationData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    },
+                    legend: {
+                        position: 'bottom',
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                             color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 12
+                            }
+                        },
+                        ticks: {
+                            backdropColor: 'rgba(255, 255, 255, 0.75)',
+                            stepSize: 2
+                        },
+                        min: 0,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('magicLinkChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Offrono Magic Link (solo per agenti)', 'Non offrono Magic Link per i clienti'],
+                datasets: [{
+                    data: [25, 75],
+                    backgroundColor: [palette.pink, '#e5e7eb'],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
