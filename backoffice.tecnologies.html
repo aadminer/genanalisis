@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografica: Costruire un Backoffice Node.js Universale e Dinamico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 384px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #0079FF;
+            line-height: 1;
+        }
+        .security-layer {
+            border-style: solid;
+            border-width: 4px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-[#004AAD] mb-4">Un Backoffice per Dominarli Tutti</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Un'analisi visiva delle tecnologie Node.js per creare una soluzione di backoffice dinamica, sicura e universalmente compatibile.</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="challenge" class="text-center bg-white rounded-xl shadow-lg p-8 md:p-12">
+                 <h2 class="text-3xl font-bold text-[#004AAD] mb-4">La Sfida: Centralizzazione Dinamica</h2>
+                <p class="text-gray-700 max-w-4xl mx-auto mb-6">L'obiettivo è sostituire molteplici backoffice legacy con un'unica applicazione Node.js in grado di connettersi a qualsiasi database esistente (MySQL, WordPress, SQL Server, etc.), leggere dinamicamente il suo schema e generare un'interfaccia di amministrazione completa, senza modelli pre-configurati.</p>
+                <div class="flex justify-center items-center space-x-4 md:space-x-8 text-2xl md:text-3xl font-bold text-[#0079FF]">
+                    <span>Legacy CMS</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span>Database Esistenti</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span class="text-4xl md:text-5xl text-[#004AAD]">🚀</span>
+                    <span class="flow-arrow">&rarr;</span>
+                    <span class="text-green-600">Backoffice Unificato</span>
+                </div>
+            </section>
+            
+            <section id="architecture" class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-2">L'Architettura Vincente: Il Trio Tecnologico</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-10">La soluzione ideale si basa sulla sinergia di tre componenti specializzati, ognuno leader nel proprio campo. Questa combinazione garantisce robustezza, manutenibilità e una generazione dinamica dell'interfaccia utente.</p>
+                <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-6 text-center">
+                    <div class="p-6 bg-[#B4D9FF] bg-opacity-30 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#004AAD]">Database Esistente</h3>
+                        <p class="text-sm text-gray-600">(MySQL, SQLite, etc.)</p>
+                        <div class="text-5xl mt-2">🗃️</div>
+                    </div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div>
+                     <div class="flow-arrow md:hidden text-center my-4">&darr;</div>
+                    <div class="p-6 bg-[#52A5FF] bg-opacity-30 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#004AAD]">ORM Dinamico</h3>
+                        <p class="text-sm text-gray-600">(Prisma / Sequelize)</p>
+                         <div class="text-5xl mt-2">⚙️</div>
+                    </div>
+                     <div class="flow-arrow hidden md:block">&rarr;</div>
+                     <div class="flow-arrow md:hidden text-center my-4">&darr;</div>
+                    <div class="p-6 bg-[#0079FF] bg-opacity-30 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#004AAD]">Backend Strutturato</h3>
+                        <p class="text-sm text-gray-600">(NestJS)</p>
+                         <div class="text-5xl mt-2">🏗️</div>
+                    </div>
+                     <div class="flow-arrow hidden md:block">&rarr;</div>
+                    <div class="flow-arrow md:hidden text-center my-4">&darr;</div>
+                    <div class="p-6 bg-[#004AAD] bg-opacity-30 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#004AAD]">UI Auto-Generata</h3>
+                        <p class="text-sm text-gray-600">(AdminJS)</p>
+                         <div class="text-5xl mt-2">🎨</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="comparisons" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-2">Confronto Framework Backend</h3>
+                    <p class="text-center text-gray-600 mb-6 text-sm">NestJS offre la migliore combinazione di struttura e scalabilità, cruciale per un'applicazione complessa e manutenibile nel tempo.</p>
+                    <div class="chart-container">
+                        <canvas id="frameworkChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-2">Confronto ORM (Object-Relational Mapper)</h3>
+                     <p class="text-center text-gray-600 mb-6 text-sm">Prisma eccelle per la sua type-safety e le capacità di introspezione, fondamentali per interagire dinamicamente con schemi sconosciuti.</p>
+                    <div class="chart-container">
+                        <canvas id="ormChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="security" class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+                <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-2">Una Fortezza di Sicurezza a Più Livelli</h2>
+                <p class="text-center text-gray-700 max-w-3xl mx-auto mb-10">La sicurezza non è un'opzione. Un approccio stratificato protegge il sistema a ogni livello, dal database all'interfaccia utente finale.</p>
+                <div class="relative w-full h-[350px] md:h-[450px]">
+                     <div class="security-layer bg-white text-[#004AAD] border-[#004AAD]" style="width: 300px; height: 300px; z-index: 10;">
+                        <span>Livello 3: UI<br>RBAC in AdminJS</span>
+                    </div>
+                    <div class="security-layer bg-[#B4D9FF] bg-opacity-50 text-[#004AAD] border-[#52A5FF]" style="width: 200px; height: 200px; z-index: 20;">
+                        <span>Livello 2: App<br>Auth & Middleware</span>
+                    </div>
+                    <div class="security-layer bg-[#52A5FF] bg-opacity-50 text-white border-[#0079FF]" style="width: 100px; height: 100px; z-index: 30;">
+                       <span>Livello 1: DB<br>ORM</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="benefits" class="text-center">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-8">I Benefici Chiave della Soluzione</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <div class="text-6xl mb-4">⚡️</div>
+                        <h3 class="text-xl font-bold text-[#0079FF]">Sviluppo Accelerato</h3>
+                        <p class="text-gray-600 mt-2">L'auto-generazione di UI e la struttura del framework riducono drasticamente i tempi di sviluppo.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                         <div class="text-6xl mb-4">🔧</div>
+                        <h3 class="text-xl font-bold text-[#0079FF]">Manutenibilità Superiore</h3>
+                        <p class="text-gray-600 mt-2">Un codice base strutturato e type-safe semplifica gli aggiornamenti e la scalabilità futura.</p>
+                    </div>
+                     <div class="bg-white rounded-xl shadow-lg p-8">
+                         <div class="text-6xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-bold text-[#0079FF]">Sicurezza Robusta</h3>
+                        <p class="text-gray-600 mt-2">Protezioni integrate a più livelli prevengono le vulnerabilità più comuni in modo proattivo.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                         <div class="text-6xl mb-4">🌍</div>
+                        <h3 class="text-xl font-bold text-[#0079FF]">Adattabilità Universale</h3>
+                        <p class="text-gray-600 mt-2">La capacità di connettersi a qualsiasi database rende la soluzione a prova di futuro.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-gray-300">
+            <p class="text-gray-500">Infografica generata sulla base dell'analisi tecnica fornita.</p>
+        </footer>
+    </div>
+
+    <script>
+        const brilliantBlues = {
+            deep: '#004AAD',
+            bright: '#0079FF',
+            light: '#52A5FF',
+            veryLight: '#B4D9FF'
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (typeof str !== 'string' || str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine.length > 0) {
+                lines.push(currentLine);
+            }
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e5e7eb',
+                    },
+                    ticks: {
+                        color: '#4b5563'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                     ticks: {
+                        color: '#4b5563'
+                    }
+                }
+            }
+        };
+
+        const frameworkData = {
+            labels: ['NestJS', 'AdonisJS', wrapLabel('Express.js (con estensioni)', 16)],
+            datasets: [{
+                label: 'Struttura e Opinioni',
+                data: [9, 8, 4],
+                backgroundColor: brilliantBlues.bright,
+                borderColor: brilliantBlues.deep,
+                borderWidth: 1
+            }, {
+                label: 'Scalabilità',
+                data: [9, 8, 7],
+                backgroundColor: brilliantBlues.light,
+                borderColor: brilliantBlues.bright,
+                borderWidth: 1
+            },
+            {
+                label: 'Esperienza Sviluppatore',
+                data: [8, 9, 6],
+                backgroundColor: brilliantBlues.veryLight,
+                borderColor: brilliantBlues.light,
+                borderWidth: 1
+            }]
+        };
+
+        new Chart(document.getElementById('frameworkChart'), {
+            type: 'bar',
+            data: frameworkData,
+            options: commonChartOptions
+        });
+        
+        const ormData = {
+            labels: ['Prisma', 'Sequelize'],
+            datasets: [{
+                label: 'Type Safety',
+                data: [10, 6],
+                backgroundColor: brilliantBlues.bright,
+                borderColor: brilliantBlues.deep,
+                borderWidth: 1
+            }, {
+                label: 'Performance',
+                data: [9, 7],
+                backgroundColor: brilliantBlues.light,
+                borderColor: brilliantBlues.bright,
+                borderWidth: 1
+            }, {
+                label: 'Introspezione Schema',
+                data: [9, 8],
+                backgroundColor: brilliantBlues.veryLight,
+                borderColor: brilliantBlues.light,
+                borderWidth: 1
+            }]
+        };
+
+        new Chart(document.getElementById('ormChart'), {
+            type: 'bar',
+            data: ormData,
+            options: commonChartOptions
+        });
+
+    </script>
+
+</body>
+</html>
