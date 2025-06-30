@@ -170,20 +170,6 @@
                         <canvas id="integrationChart"></canvas>
                     </div>
                 </div>
-                
-                <div class="card p-6 lg:col-span-2">
-                    <h3 class="text-xl font-bold text-center mb-2">Disponibilità "Magic Link" per i Clienti</h3>
-                    <p class="text-center text-sm text-gray-600 mb-6">Una delle funzionalità più richieste, il login diretto senza password per i clienti, risulta un punto debole comune.</p>
-                     <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                        <div class="chart-container" style="max-width: 300px; height: 300px;">
-                            <canvas id="magicLinkChart"></canvas>
-                        </div>
-                        <div class="max-w-md text-center md:text-left">
-                            <h4 class="text-2xl font-bold text-[#BC5090]">0% di Soluzioni Analizzate</h4>
-                            <p class="mt-2 text-gray-700">Nessuna delle piattaforme di helpdesk dedicate (Deepser, Rexpondo, Freshdesk, Zoho Desk) offre nativamente una funzione di "magic link" per gli utenti clienti finali. Freshdesk la riserva solo agli agenti interni. Questo rappresenta il principale ostacolo per un accesso semplificato e potrebbe richiedere sviluppi personalizzati.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -314,7 +300,142 @@
         
         <p class="mt-8 text-center text-gray-600 italic">L'assenza di un "magic link" nativo è un punto critico comune a quasi tutte le soluzioni, che richiederà una considerazione e un'eventuale implementazione ad-hoc indipendentemente dalla scelta.</p>
 
-
+        <div class="overflow-x-auto card p-6">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-[#003F5C] text-white">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tl-lg">Criterio</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Deepser</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Rexpondo</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Freshdesk</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">Zoho Desk</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider rounded-tr-lg">ClickUp Forms</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Account Cliente Unico</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, portale dedicato</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, portale dedicato</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, portale dedicato</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, portale dedicato</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No, solo submission form</td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Form Configurabili (Complessità/Validazione/Allegati)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Elevato, con logiche condizionali, validazione e upload.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Elevato, con logiche condizionali, validazione e upload.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto elevato, logiche avanzate, validazione, allegati.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto elevato, logiche avanzate, validazione, allegati.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Medio, campi personalizzabili, upload, logiche base.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Prezzo Contenuto (per utente cliente)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Variabile, dipende da contratto (contattare).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Variabile, dipende da contratto (contattare).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Alto, basato su piani/agenti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto basso/Nullo (fino a 1000 utenti portale gratis).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Nullo (incluso nell'abbonamento ClickUp).</td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Integrazione ClickUp (API/Sincronizzazione Bidirezionale)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">API disponibili, richiede sviluppo personalizzato. Bidirezionale possibile con sviluppo.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">API disponibili, richiede sviluppo personalizzato. Bidirezionale possibile con sviluppo.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">API complete e app marketplace. Bidirezionale possibile.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">API complete e integrazioni via Zapier/Webhooks. Bidirezionale possibile.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Nativa (i form creano task direttamente). Bidirezionale non applicabile.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Login Diretto (Magic Link via URL)</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No nativo, richiede sviluppo personalizzato.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No nativo, richiede sviluppo personalizzato.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No nativo per clienti (solo agenti), richiede sviluppo.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No nativo, richiede sviluppo personalizzato.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No, ma link diretto al form.</td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Supporto in Italiano</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-[#003F5C] font-bold">Sì, madrelingua.</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-[#003F5C] font-bold">Sì, madrelingua.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Internazionale, no specifico in italiano.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Internazionale, disponibile anche in italiano.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Internazionale, no specifico in italiano.</td>
+                    </tr>
+                     <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Scalabilità Futura (Utenti/Ticket)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto alta, soluzioni enterprise.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto alta, soluzioni enterprise.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Estremamente alta, leader di settore.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Estremamente alta, leader di settore.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Dipende dal piano ClickUp e numero di automazioni.</td>
+                    </tr>
+                     <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Reporting e Analisi</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completo (SLA, tempi risoluzione, volumi).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completo (SLA, tempi risoluzione, volumi).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Avanzato e personalizzabile.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Avanzato e personalizzabile.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Limitato (basato sui report di ClickUp sui task).</td>
+                    </tr>
+                     <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Gestione SLA</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, con regole e escalation.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, con regole e escalation.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, avanzata.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, avanzata.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No nativo (gestito tramite automazioni ClickUp).</td>
+                    </tr>
+                     <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Base di Conoscenza (KB) e Self-Service</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, modulo integrato.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, modulo integrato.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, modulo integrato e AI-powered.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">Sì, modulo integrato e AI-powered.</td>
+                        <td class="px-6 py-4 whitespace-nowrap">No (si possono usare Doc/Wiki di ClickUp).</td>
+                    </tr>
+                     <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Canali di Supporto Aggiuntivi</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Email, telefono, chat (da verificare).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Email, telefono, chat (da verificare).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Email, chat, telefono, social, messaging.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Email, chat, telefono, social, messaging.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Nessuno (solo form web).</td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Facilità di Onboarding (Clienti/Team)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Clienti: Media; Team: Media.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Clienti: Media; Team: Media.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Clienti: Alta; Team: Media.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Clienti: Alta; Team: Media.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Clienti: Alta; Team: Bassa (già in ClickUp).</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Sicurezza e Compliance</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Alta (standard enterprise).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Alta (standard enterprise).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto alta (certificazioni internazionali).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Molto alta (certificazioni internazionali).</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Alta (in base alle policy di ClickUp).</td>
+                    </tr>
+                     <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Personalizzazione Branding</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completa per portale clienti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completa per portale clienti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completa per portale clienti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Completa per portale clienti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Limitata (segue il branding ClickUp).</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-[#7A5195]">Esperienza Mobile</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Sì, responsive e app mobile per agenti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Sì, responsive e app mobile per agenti.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Sì, responsive e app mobile dedicate.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Sì, responsive e app mobile dedicate.</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">Sì, responsive tramite app ClickUp.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </main>
 
     <footer class="bg-[#003F5C] text-white text-center py-6 mt-16">
