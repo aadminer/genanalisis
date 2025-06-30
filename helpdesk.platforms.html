@@ -239,6 +239,82 @@
             </div>
         </section>
 
+        <section id="criteri" class="mb-12 p-6 card">
+            <h2 class="text-2xl font-semibold mb-6 text-[#7A5195]">Criteri di Valutazione Chiave</h2>
+            <p class="mb-4 text-gray-700">Per la scelta della piattaforma più idonea, sono stati considerati i seguenti requisiti fondamentali:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong class="text-[#003F5C]">Account Cliente Unico:</strong> Necessità di fornire un singolo account per cliente per l'inserimento e la gestione delle segnalazioni sul proprio sito.</li>
+                <li><strong class="text-[#003F5C]">Form Configurabili:</strong> La capacità di personalizzare i moduli di inserimento ticket per raccogliere informazioni specifiche e variabili per cliente è cruciale.</li>
+                <li><strong class="text-[#003F5C]">Prezzo Contenuto:</strong> Il costo per utente cliente deve essere minimo, idealmente un abbonamento unico con utenti limitati, per poter essere ribaltato sul contratto di manutenzione.</li>
+                <li><strong class="text-[#003F5C]">Integrazione ClickUp:</strong> Preferenza per la possibilità di integrare il software con ClickUp (anche tramite API personalizzate) per allinearsi ai task di sviluppo interni.</li>
+                <li><strong class="text-[#003F5C]">Login Diretto (Magic Link):</strong> Desiderio di configurare un accesso diretto tramite codice in URL per eliminare la necessità di un'ennesima password per il cliente e integrarlo nel backoffice (WP o Laravel).</li>
+                <li><strong class="text-[#003F5C]">Supporto in Italiano:</strong> Preferibile un'assistenza e documentazione in lingua italiana.</li>
+            </ul>
+        </section>
+        
+        <section id="panoramica-soluzioni" class="mb-12 p-6 card">
+            <h2 class="text-2xl font-semibold mb-6 text-[#7A5195]">Panoramica delle Soluzioni Esaminate</h2>
+            <p class="mb-4 text-gray-700">Abbiamo preso in esame diverse piattaforme di ticketing dedicate, oltre a un'opzione di integrazione diretta con ClickUp:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong>Deepser:</strong> Piattaforma italiana con potenziale di personalizzazione.</li>
+                <li><strong>Rexpondo:</strong> Altra soluzione italiana, focalizzata sul servizio clienti.</li>
+                <li><strong>Freshworks (Freshdesk):</strong> Un gigante del settore, con ampia gamma di funzionalità.</li>
+                <li><strong>Zoho (Zoho Desk):</strong> Parte dell'ecosistema Zoho, noto per le sue soluzioni integrate.</li>
+                <li><strong>ClickUp Forms:</strong> Utilizzo dei template di form nativi di ClickUp per la raccolta delle segnalazioni.</li>
+            </ul>
+        </section>
+        
+        <section id="analisi-per-criterio" class="mb-12 p-6 card">
+            <h2 class="text-2xl font-semibold mb-6 text-[#7A5195]">Analisi Approfondita per Criterio</h2>
+        
+            <h3 class="text-xl font-bold mb-3 text-[#003F5C]">Costo per l'Utente Cliente Finale</h3>
+            <p class="mb-4 text-gray-700">Il costo per utente cliente è un fattore determinante per la sua sostenibilità economica. Dalle nostre valutazioni:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong class="text-[#FFA600]">Zoho Desk:</strong> Offre un modello estremamente vantaggioso, con la possibilità di avere fino a 1.000 utenti portale gratuiti nel piano "Standard" e superiori. Questo lo rende il più competitivo su questo fronte.</li>
+                <li><strong class="text-[#FF764A]">ClickUp Forms:</strong> Il costo è intrinseco all'abbonamento ClickUp esistente, rendendolo di fatto "gratuito" per gli utenti clienti in termini aggiuntivi, anche se non offre un vero e proprio portale.</li>
+                <li><strong class="text-[#EF5675]">Deepser / Rexpondo / Freshdesk:</strong> Queste piattaforme tendono a basare il loro pricing sul numero di agenti (interni) o richiedono piani specifici per il portale clienti, il cui costo per utente finale può essere significativo e deve essere verificato direttamente con i fornitori.</li>
+            </ul>
+        
+            <h3 class="text-xl font-bold mb-3 mt-8 text-[#003F5C]">Facilità di Integrazione con ClickUp</h3>
+            <p class="mb-4 text-gray-700">L'integrazione con ClickUp è essenziale per fluidificare il workflow di sviluppo:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong class="text-[#003F5C]">ClickUp Forms:</strong> Integrazione nativa e perfetta. Ogni segnalazione diventa un task direttamente in ClickUp, eliminando passaggi intermedi. È la soluzione più semplice da implementare per questo scopo.</li>
+                <li><strong class="text-[#FFA600]">Zoho Desk:</strong> Offre un'ampia gamma di API REST e connettori (es. Zapier) che rendono l'integrazione con ClickUp fattibile, sebbene richieda un certo sforzo di configurazione o sviluppo.</li>
+                <li><strong class="text-[#7A5195]">Deepser / Rexpondo / Freshdesk:</strong> Dispongono generalmente di API, ma la complessità dell'integrazione con ClickUp può variare e potrebbe richiedere sviluppi personalizzati significativi.</li>
+            </ul>
+        
+            <h3 class="text-xl font-bold mb-3 mt-8 text-[#003F5C]">Disponibilità di Login Diretto (Magic Link)</h3>
+            <p class="mb-4 text-gray-700">Questa è una funzionalità molto desiderata per migliorare l'esperienza utente:</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                <li><strong class="text-[#BC5090]">Assenza Generalizzata:</strong> Sorprendentemente, nessuna delle soluzioni di helpdesk dedicate (Deepser, Rexpondo, Freshdesk, Zoho Desk) offre nativamente una funzione di "magic link" o login senza password per gli utenti clienti finali. In alcuni casi (es. Freshdesk) è disponibile solo per gli agenti interni.</li>
+                <li><strong class="text-[#FF764A]">ClickUp Forms:</strong> Non essendo un vero portale, non si applica direttamente, ma il concetto di "magic link" per l'accesso a un form specifico potrebbe essere simulato con link pre-compilati o simili, anche se senza un vero e proprio login storico.</li>
+                <li><strong class="text-[#003F5C]">Necessità di Sviluppo Personalizzato:</strong> Per ottenere questa funzionalità, sarà quasi certamente necessario uno sviluppo personalizzato che generi token temporanei o link unici per l'accesso.</li>
+            </ul>
+        </section>
+        
+        <section id="raccomandazioni" class="mb-12 p-6 card">
+            <h2 class="text-2xl font-semibold mb-6 text-[#7A5195]">Percorso Decisionale e Raccomandazioni</h2>
+            <p class="mb-4 text-gray-700">La scelta finale dipende dalla priorità strategica che si intende dare ai vari criteri:</p>
+        
+            <h3 class="text-xl font-bold mb-3 mt-8 text-[#003F5C]">Scenario 1: Priorità al Costo per Cliente e Funzionalità Complete</h3>
+            <p class="mb-2 text-gray-700">Se l'obiettivo principale è fornire un portale clienti completo al costo più basso possibile per gli utenti finali, la raccomandazione è:</p>
+            <p class="text-lg font-bold text-green-700 ml-4">🏆 Zoho Desk</p>
+            <p class="ml-4 text-gray-700">Offre il miglior equilibrio con 1.000 utenti portale gratuiti e un set di funzionalità robuste. L'integrazione con ClickUp è fattibile tramite le sue API.</p>
+        
+            <h3 class="text-xl font-bold mb-3 mt-8 text-[#003F5C]">Scenario 2: Priorità alla Massima Semplicità e Integrazione Nativa</h3>
+            <p class="mb-2 text-gray-700">Se l'integrazione perfetta e immediata con ClickUp è la considerazione predominante, anche a costo di sacrificare un portale clienti completo, allora:</p>
+            <p class="text-lg font-bold text-blue-700 ml-4">🚀 ClickUp Forms</p>
+            <p class="ml-4 text-gray-700">Rappresenta la soluzione più diretta. I ticket si trasformano istantaneamente in task. Richiede però che la gestione dello storico delle segnalazioni sia lato ClickUp o che si accetti l'assenza di un vero e proprio portale per il cliente.</p>
+        
+            <h3 class="text-xl font-bold mb-3 mt-8 text-[#003F5C]">Scenario 3: Priorità al Supporto Italiano e Massima Personalizzazione</h3>
+            <p class="mb-2 text-gray-700">Se si preferisce una soluzione con supporto in italiano e un alto grado di personalizzazione, anche se può richiedere maggiore configurazione iniziale e un costo potenzialmente più elevato per gli utenti finali:</p>
+            <p class="text-lg font-bold text-purple-700 ml-4">🇮🇹 Deepser / Rexpondo</p>
+            <p class="ml-4 text-gray-700">Queste soluzioni italiane offrono flessibilità e supporto locale. È fondamentale contattarli direttamente per definire i costi precisi per gli utenti clienti e valutare la complessità di un'integrazione API con ClickUp su misura.</p>
+        </section>
+        
+        <p class="mt-8 text-center text-gray-600 italic">L'assenza di un "magic link" nativo è un punto critico comune a quasi tutte le soluzioni, che richiederà una considerazione e un'eventuale implementazione ad-hoc indipendentemente dalla scelta.</p>
+
+
     </main>
 
     <footer class="bg-[#003F5C] text-white text-center py-6 mt-16">
